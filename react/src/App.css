@@ -1,0 +1,96 @@
+/* Reset & base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f3cf7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main container / card */
+.container {
+  background: #aa2b1d;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 400px;
+  max-width: 90%;
+  color: #8a8635;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #8a8635;
+}
+
+/* Input + Add button */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #8a8635;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+button.add-btn {
+  padding: 10px 16px;
+  background: #cc561e;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.add-btn:hover {
+  background: #e07047;
+}
+
+/* Todo items */
+.task-list {
+  margin-top: 10px;
+}
+
+.todo-item {
+  background: #f3cf7a;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.todo-text {
+  color: #8a8635;
+  font-size: 15px;
+}
+
+button.delete-btn {
+  background: #cc561e;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.delete-btn:hover {
+  background: #e07047;
+}
+
