@@ -64,7 +64,7 @@ button.add-btn:hover {
   margin-top: 10px;
 }
 
-.todo-item {
+.todo-item, .todo-input{
   background: #f3cf7a;
   padding: 12px 14px;
   border-radius: 10px;
