@@ -7,8 +7,9 @@ interface TodoInputProps {
 const TodoInput: React.FC<TodoInputProps> = ({ onAdd }) => {
   const [value, setValue] = useState("");
 
-  const handleAdd = () => {
-    onAdd(value);
+  const handleSubmit = () => {
+    if (!value.trim()) return;
+    onAdd(value.trim());
     setValue("");
   };
 
@@ -16,11 +17,12 @@ const TodoInput: React.FC<TodoInputProps> = ({ onAdd }) => {
     <div className="todo-input">
       <input
         type="text"
-        placeholder="Enter a task..."
+        placeholder="Add a new task"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
       />
-      <button onClick={handleAdd}>Add</button>
+      <button onClick={handleSubmit}>Add</button>
     </div>
   );
 };

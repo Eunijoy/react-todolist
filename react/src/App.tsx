@@ -3,17 +3,37 @@ import "./App.css";
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 
+type Task = {
+  id: number;
+  text: string;
+  completed: boolean;
+};
 
 const App: React.FC = () => {
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const addTask = (task: string) => {
-    if (task.trim() === "") return;
-    setTasks([...tasks, task]);
+  const addTask = (text: string) => {
+    if (!text.trim()) return;
+
+    const newTask: Task = {
+      id: Date.now(),
+      text,
+      completed: false,
+    };
+
+    setTasks([...tasks, newTask]);
   };
 
-  const deleteTask = (index: number) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+  const deleteTask = (id: number) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  const toggleTask = (id: number) => {
+    setTasks(tasks.map(task =>
+      task.id === id
+        ? { ...task, completed: !task.completed }
+        : task
+    ));
   };
 
   return (
@@ -23,12 +43,12 @@ const App: React.FC = () => {
       <TodoInput onAdd={addTask} />
 
       <div className="task-list">
-        {tasks.map((task, index) => (
+        {tasks.map(task => (
           <TodoItem
-            key={index}
+            key={task.id}
             task={task}
-            index={index}
             onDelete={deleteTask}
+            onToggle={toggleTask}
           />
         ))}
       </div>
