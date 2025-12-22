@@ -47,5 +47,6 @@ From the **react** folder:
 
 ```bash
 cd todo-list
+cd react
 npm install
 npm run dev
