@@ -4,22 +4,6 @@ A clean and beginner-friendly **Todo List application built with React and TypeS
 This project lives inside a parent folder named **`react/`** and serves as a solid foundation for understanding state management, component structure, and basic UI/UX principles in React.
 
 ---
-
-## Project Structure
-
-react/
-└── todo-list/
-├── src/
-│ ├── App.tsx
-│ ├── TodoInput.tsx
-│ ├── TodoItem.tsx
-│ ├── App.css
-│ └── main.tsx
-└── README.md
-
-
----
-
 ## Features
 
 - Add new tasks
